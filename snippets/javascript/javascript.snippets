@@ -2,12 +2,12 @@
 
 # prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} = function(${3}) {
+	${1}.prototype.${2} = function(${3}) {
 		${0}
 	};
 # Function
 snippet fun
-	function ${1:function_name}(${2}) {
+	function ${1}(${2}) {
 		${0}
 	}
 # Anonymous Function
@@ -17,12 +17,12 @@ snippet f
 	}
 # Anonymous Function assigned to variable
 snippet vaf
-	var ${1:function_name} = function(${2}) {
+	var ${1} = function(${2}) {
 		${0}
 	};
 # Function assigned to variable
 snippet vf
-	var ${1:function_name} = function $1(${2}) {
+	var ${1} = function $1(${2}) {
 		${0}
 	};
 # Immediate function
@@ -32,7 +32,7 @@ snippet (f
 	}(${2}));
 # self-defining function
 snippet sdf
-	var ${1:function_name} = function (${2:argument}) {
+	var ${1} = function (${2}) {
 		${3}
 
 		$1 = function ($2) {
@@ -44,23 +44,23 @@ snippet sdf
 
 # if
 snippet if
-	if (${1:true}) {
+	if (${1}) {
 		${0}
 	}
 # if ... else
 snippet ife
-	if (${1:true}) {
+	if (${1}) {
 		${2}
 	} else {
 		${0}
 	}
 # tertiary conditional
 snippet ter
-	${1:/* condition */} ? ${2:/* if true */} : ${0:/* if false */}
+	${1} ? ${2} : ${0}
 # switch
 snippet switch
-	switch (${1:expression}) {
-		case '${3:case}':
+	switch (${1}) {
+		case '${3}':
 			${4}
 			break;
 		${0}
@@ -69,7 +69,7 @@ snippet switch
 	}
 # case
 snippet case
-	case '${1:case}':
+	case '${1}':
 		${2}
 		break;
 	${0}
@@ -77,38 +77,38 @@ snippet case
 snippet try
 	try {
 		${1}
-	} catch (${2:e}) {
-		${0:/* handle error */}
+	} catch (${2}) {
+		${0}
 	}
 # return
 snippet ret
-	return ${0:result};
+	return ${0};
 
 # Loops
 
 # for loop
 snippet for
-	for (var ${2:i} = 0, l = ${1:arr}.length; $2 < l; $2 ++) {
-		var ${3:v} = $1[$2];${0:}
+	for (var ${2} = 0, l = ${1}.length; $2 < l; $2 ++) {
+		var ${3} = $1[$2];${0}
 	}
 # Reversed for loop
 snippet forr
-	for (var ${2:i} = ${1:arr}.length - 1; $2 >= 0; $2 --) {
-		var ${3:v} = $1[$2];${0:}
+	for (var ${2} = ${1}.length - 1; $2 >= 0; $2 --) {
+		var ${3} = $1[$2];${0:}
 	}
 # While loop
 snippet wh
-	while (${1:/* condition */}) {
+	while (${1}) {
 		${0}
 	}
 # Do while loop
 snippet do
 	do {
 		${0}
-	} while (${1:/* condition */});
+	} while (${1});
 # For in loop
 snippet fori
-	for (var ${1:prop} in ${2:object}) {
+	for (var ${1} in ${2}) {
 		${0:$2[$1]}
 	}
 
@@ -116,7 +116,7 @@ snippet fori
 
 # Object Method
 snippet :f
-	${1:method_name}: function (${2:attribute}) {
+	${1}: function (${2}) {
 		${3}
 	},
 # hasOwnProperty
@@ -124,7 +124,7 @@ snippet has
 	hasOwnProperty(${0})
 # singleton
 snippet sing
-	function ${1:Singleton} (${2:argument}) {
+	function ${1} (${2}) {
 		// the cached instance
 		var instance;
 
@@ -244,16 +244,16 @@ snippet cd
 	console.debug(${0});
 # console.trace
 snippet ct
-	console.trace(${0:label});
+	console.trace(${0});
 # console.time
 snippet ctime
-	console.time(${0:label});
+	console.time(${0});
 # console.assert
 snippet ca
-	console.assert(${1:expression}, ${0:obj});
+	console.assert(${1}, ${0});
 # console.dir
 snippet cdir
-	console.dir(${0:obj});
+	console.dir(${0});
 
 # Misc
 

@@ -1,0 +1,4 @@
+snippet config
+  beforeEach(module(function ($provide) {                                                                                                                 
+    $provide.constant('config', {api: {uri: 'http://localhost:3001'}, 'language': 'en_EN'});
+  }));
