@@ -1,0 +1,17 @@
+snippet dir
+  angular.module('packlink-pro')
+    .directive('', function () {
+      'use strict';
+
+      return {
+        restrict: '',
+        templateUrl: '/packlink-pro/',
+        require: '^ngModel',
+        scope: {
+          ngModel: '='
+        },
+        link: function (scope, el, attrs) {
+          
+        }
+      };
+    });
