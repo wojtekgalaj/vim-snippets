@@ -1,17 +1,27 @@
 snippet dir
-  angular.module('packlink-pro')
-    .directive('', function () {
-      'use strict';
+	angular.module('packlink-pro')
+		.directive('', function () {
+			'use strict';
 
-      return {
-        restrict: '',
-        templateUrl: '/packlink-pro/',
-        require: '^ngModel',
-        scope: {
-          ngModel: '='
-        },
-        link: function (scope, el, attrs) {
-          
-        }
-      };
-    });
+			return {
+				restrict: '',
+				templateUrl: '/packlink-pro/',
+				require: '^ngModel',
+				scope: {
+					ngModel: '='
+				},
+				link: function (scope, el, attrs) {
+
+				}
+			};
+		});
+
+snippet ss
+	$scope.
+
+snippet sf
+	$scope.${1} = function (${2}) {
+		${3}
+	}
+
+
