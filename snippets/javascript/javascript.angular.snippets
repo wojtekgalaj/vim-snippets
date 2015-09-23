@@ -1,16 +1,31 @@
 snippet dir
 	angular.module('${1}')
-		.directive('', function () {
+		.directive('${2}', function () {
 			'use strict';
 
 			return {
-				restrict: '${2}',
+				restrict: '${3}',
 				templateUrl: '/packlink-pro/',
 				scope: {
-					${3}: '='
+					${4}: '='
 				}
 			};
 		});
+
+snippet ctrl
+	angular.module('${1}')
+		.controller('${2}', ['$scope', function ($scope) {
+			'use strict';
+		}]);
+
+snippet fact
+	angular.module('${1}')
+		.factory('${2}', ['', function () {
+			'use strict';
+			return {
+				${3}
+			}
+		}]);
 
 snippet ss
 	$scope.
