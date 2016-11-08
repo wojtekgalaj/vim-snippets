@@ -4,7 +4,7 @@
 snippet proto
 	${1}.prototype.${2} = function(${3}) {
 		${0}
-	};
+	}
 # Function
 snippet fun
 	function ${1}(${2}) {
@@ -19,17 +19,17 @@ snippet f
 snippet vaf
 	var ${1} = function(${2}) {
 		${0}
-	};
+	}
 # Function assigned to variable
 snippet vf
 	var ${1} = function $1(${2}) {
 		${0}
-	};
+	}
 # Immediate function
 snippet (f
 	(function(${1}) {
 		${0}
-	}(${2}));
+	}(${2}))
 # self-defining function
 snippet sdf
 	var ${1} = function (${2}) {
@@ -37,8 +37,8 @@ snippet sdf
 
 		$1 = function ($2) {
 			${0}
-		};
-	};
+		}
+	}
 
 # Flow control
 
@@ -62,7 +62,7 @@ snippet switch
 	switch (${1}) {
 		case '${3}':
 			${4}
-			break;
+			break
 		${0}
 		default:
 			${2}
@@ -71,7 +71,7 @@ snippet switch
 snippet case
 	case '${1}':
 		${2}
-		break;
+		break
 	${0}
 # try
 snippet try
@@ -82,7 +82,7 @@ snippet try
 	}
 # return
 snippet ret
-	return ${0};
+	return ${0}
 
 # Loops
 
@@ -105,7 +105,7 @@ snippet wh
 snippet do
 	do {
 		${0}
-	} while (${1});
+	} while (${1})
 # For in loop
 snippet fori
 	for (var ${1} in ${2}) {
@@ -126,32 +126,32 @@ snippet has
 snippet sing
 	function ${1} (${2}) {
 		// the cached instance
-		var instance;
+		var instance
 
 		// rewrite the constructor
 		$1 = function $1($2) {
-			return instance;
-		};
+			return instance
+		}
 
 		// carry over the prototype properties
-		$1.prototype = this;
+		$1.prototype = this
 
 		// the instance
-		instance = new $1();
+		instance = new $1()
 
 		// reset the constructor pointer
-		instance.constructor = $1;
+		instance.constructor = $1
 
 		${0}
 
-		return instance;
+		return instance
 	}
 # Crockford's object function
 snippet obj
 	function object(o) {
 		function F() {}
-		F.prototype = o;
-		return new F();
+		F.prototype = o
+		return new F()
 	}
 # Define multiple properties
 snippet props
@@ -171,7 +171,7 @@ snippet props
 				configurable : ${0:boolean}
 			}
 		}
-	);
+	)
 # Define single property
 snippet prop
 	Object.defineProperty(
@@ -189,7 +189,7 @@ snippet prop
 			enumerable   : ${5:boolean},
 			configurable : ${0:boolean}
 		}
-	);
+	)
 
 # Documentation
 
@@ -208,10 +208,10 @@ snippet @ret
 
 # JSON.parse
 snippet jsonp
-	JSON.parse(${0:jstr});
+	JSON.parse(${0:jstr})
 # JSON.stringify
 snippet jsons
-	JSON.stringify(${0:object});
+	JSON.stringify(${0:object})
 
 # DOM selectors
 
@@ -238,29 +238,29 @@ snippet qsa
 
 # console.log
 snippet cl
-	console.log(${0});
+	console.log(${0})
 # console.debug
 snippet cd
-	console.debug(${0});
+	console.debug(${0})
 # console.trace
 snippet ct
-	console.trace(${0});
+	console.trace(${0})
 # console.time
 snippet ctime
-	console.time(${0});
+	console.time(${0})
 # console.assert
 snippet ca
-	console.assert(${1}, ${0});
+	console.assert(${1}, ${0})
 # console.dir
 snippet cdir
-	console.dir(${0});
+	console.dir(${0})
 
 # Misc
 
-# 'use strict';
+# 'use strict'
 snippet us
-	'use strict';
+	'use strict'
 
 # setTimeout function
 snippet timeout
-	setTimeout(function () {${0}}${2}, ${1:10});
+	setTimeout(function () {${0}}${2}, ${1:10})

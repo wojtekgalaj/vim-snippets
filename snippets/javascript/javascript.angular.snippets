@@ -1,7 +1,7 @@
 snippet dir
 	angular.module('${1}')
 		.directive('${2}', function () {
-			'use strict';
+			'use strict'
 
 			return {
 				restrict: '${3}',
@@ -9,21 +9,21 @@ snippet dir
 				scope: {
 					${4}: '='
 				}
-			};
-		});
+			}
+		})
 snippet ctrl
 	angular.module('${1}')
 		.controller('${2}', ['$scope', function ($scope) {
-			'use strict';
-		}]);
+			'use strict'
+		}])
 snippet fact
 	angular.module('${1}')
 		.factory('${2}', ['', function () {
-			'use strict';
+			'use strict'
 			return {
 				${3}
 			}
-		}]);
+		}])
 snippet ss
 	$scope.${1}
 snippet sf
