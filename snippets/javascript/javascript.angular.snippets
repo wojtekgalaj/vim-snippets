@@ -1,10 +1,12 @@
 snippet scomponent
-	var ${1} = require('./${2}')
-	var ngModule = angular.module('${3}')
-		.component('${4}', ${5}.CONFIG)
+	var ${1}Controller = require('./${2}')
+	module.exports = function (ngModule) {
+		var ngModule = angular.module('${3}')
+			.component('${4}', ${5}.CONFIG)
 
-	if (TESTING) {
-		require('./${6}.test')(ngModule)
+		if (TESTING) {
+			require('./${6}.test')(ngModule)
+		}
 	}
 
 snippet scontroller
