@@ -1,32 +1,59 @@
-snippet dir
-	angular.module('${1}')
-		.directive('${2}', function () {
-			'use strict'
+snippet scomponent
+	var ${1} = require('./${2}')
+	var ngModule = angular.module('${3}')
+		.component('${4}', ${5}.CONFIG)
 
-			return {
-				restrict: '${3}',
-				templateUrl: '/packlink-pro/',
-				scope: {
-					${4}: '='
+	if (TESTING) {
+		require('./${6}.test')(ngModule)
+	}
+
+snippet scontroller
+	${1}.CONFIG = {
+		template: require('./${2}.html'),
+		controller: ${3},
+		controllerAs: 'vm',
+		bindings: {
+		}
+	}
+
+	module.exports = ${3}
+
+	function ${3} () {
+		'ngInject'
+
+		var vm = this
+	}
+
+snippet stest
+	module.exports = function (ngModule) {
+		describe('DrawingToolsMenuComponent', function () {
+			var scope, controller, element
+
+			beforeEach(function () {
+				angular.mock.module(ngModule.name)
+			})
+
+			beforeEach(function () {
+				angular.mock.module(function ($provide) {
+					$provide.value('...', )
+				})
+			})
+
+			beforeEach(inject(function ($compile, $rootScope) {
+				scope = $rootScope.$new()
 				}
-			}
+				spyOn($rootScope, '$broadcast')
+				element = angular.element(`
+				`)
+				element = $compile(element)(scope)
+				scope.$apply()
+				controller = element.controller('drawingToolsMenu')
+			}))
+
+			it('should emit an event when comparing', function () {
+				controller.xxx()
+				scope.$apply()
+				expect(scope.$broadcast).toHaveBeenCalledWith()
+			})
 		})
-snippet ctrl
-	angular.module('${1}')
-		.controller('${2}', ['$scope', function ($scope) {
-			'use strict'
-		}])
-snippet fact
-	angular.module('${1}')
-		.factory('${2}', ['', function () {
-			'use strict'
-			return {
-				${3}
-			}
-		}])
-snippet ss
-	$scope.${1}
-snippet sf
-	$scope.${1} = function (${2}) {
-		${3}
 	}
