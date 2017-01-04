@@ -1,8 +1,7 @@
 snippet scomponent
 	var ${1}Controller = require('./${2}')
 	module.exports = function (ngModule) {
-		var ngModule = angular.module('${3}')
-			.component('${4}', ${5}.CONFIG)
+		ngModule.component('${4}', ${5}.CONFIG)
 
 		if (TESTING) {
 			require('./${6}.test')(ngModule)
@@ -43,18 +42,11 @@ snippet stest
 
 			beforeEach(inject(function ($compile, $rootScope) {
 				scope = $rootScope.$new()
-				spyOn($rootScope, '$broadcast')
 				element = angular.element(`
 				`)
 				element = $compile(element)(scope)
 				scope.$apply()
-				controller = element.controller('drawingToolsMenu')
+				controller = element.controller('')
 			}))
-
-			it('should emit an event when comparing', function () {
-				controller.xxx()
-				scope.$apply()
-				expect(scope.$broadcast).toHaveBeenCalledWith()
-			})
 		})
 	}
